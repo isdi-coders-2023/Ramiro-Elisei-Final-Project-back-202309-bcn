@@ -3,7 +3,7 @@ export interface ActivityStructure {
   activityName: string;
   LedBy: string;
   date: string;
-  starTime: string;
+  startTime: string;
   ActivityDescription: string;
   imageUrl: string;
 }
