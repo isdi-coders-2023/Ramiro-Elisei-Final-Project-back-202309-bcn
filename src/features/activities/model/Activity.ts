@@ -18,7 +18,7 @@ const activitySchema = new Schema<ActivityStructure>({
     type: String,
     required: true,
   },
-  starTime: {
+  startTime: {
     type: String,
     required: true,
   },
