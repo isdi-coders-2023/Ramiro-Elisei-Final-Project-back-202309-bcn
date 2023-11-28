@@ -5,7 +5,7 @@ import debugCreator from "debug";
 import { startServer } from "./server/app.js";
 import { connectToDatabase } from "./database/index.js";
 
-const debug = debugCreator("ludic: main");
+const debug = debugCreator("ludic:main");
 
 const port = process.env.PORT ?? 4000;
 

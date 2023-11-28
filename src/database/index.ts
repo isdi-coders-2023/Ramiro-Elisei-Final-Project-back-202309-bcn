@@ -2,7 +2,7 @@ import chalk from "chalk";
 import mongoose from "mongoose";
 import debugCreator from "debug";
 
-const debug = debugCreator("ludic: database");
+const debug = debugCreator("ludic:database");
 
 export const connectToDatabase = async (mongoUrl: string) => {
   try {
