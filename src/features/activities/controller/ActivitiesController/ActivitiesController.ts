@@ -1,10 +1,8 @@
 import { type Request, type Response } from "express";
-import type ActivitiesMongooseRepository from "../../repository/ActivitiesMongooseRepository.js";
+import { type ActivitiesRepository } from "../../repository/types.js";
 
 class ActivitiesController {
-  constructor(
-    private readonly activitiesRepository: ActivitiesMongooseRepository,
-  ) {}
+  constructor(private readonly activitiesRepository: ActivitiesRepository) {}
 
   getActivities = async (_req: Request, res: Response): Promise<void> => {
     const activities = await this.activitiesRepository.getActivities();
