@@ -3,8 +3,8 @@ import { app } from "../../../app";
 import "../../../../server/index";
 
 describe("Given a GET /pathToTest endpoint", () => {
-  describe("When it receives a request", () => {
-    test("Then it should respond with 404 and a message 'Endpoint not found'", async () => {
+  describe("When it receives a GET request to /pathToTest path", () => {
+    test("Then it should respond with 404 status code and a the message 'Endpoint not found'", async () => {
       const expectedStatusCode = 404;
       const expectedMessage = "Endpoint not found";
       const requestedPath = "/pathToTest";
