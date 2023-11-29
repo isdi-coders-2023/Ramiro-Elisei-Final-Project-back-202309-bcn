@@ -4,8 +4,8 @@ import { type NextFunction, type Request, type Response } from "express";
 import expect from "expect";
 
 describe("Given a notFound middleware", () => {
-  describe("When ot receives a next", () => {
-    test("Then it should call it with a 404 status and a 'Endpoint not found' message", () => {
+  describe("When ot receives a next function", () => {
+    test("Then it should call the next function with a 404 status and a 'Endpoint not found' error", () => {
       const req = {};
       const res = {};
       const next = jest.fn();
