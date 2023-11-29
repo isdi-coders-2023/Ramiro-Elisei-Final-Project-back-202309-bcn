@@ -10,7 +10,7 @@ const activitySchema = new Schema<ActivityStructure>({
     type: String,
     required: true,
   },
-  LedBy: {
+  ledBy: {
     type: String,
     required: true,
   },
@@ -22,7 +22,7 @@ const activitySchema = new Schema<ActivityStructure>({
     type: String,
     required: true,
   },
-  ActivityDescription: {
+  activityDescription: {
     type: String,
     required: true,
   },

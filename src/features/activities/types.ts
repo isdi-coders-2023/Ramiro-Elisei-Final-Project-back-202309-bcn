@@ -1,9 +1,9 @@
 export interface ActivityStructure {
   activityType: string;
   activityName: string;
-  LedBy: string;
+  ledBy: string;
   date: string;
   startTime: string;
-  ActivityDescription: string;
+  activityDescription: string;
   imageUrl: string;
 }
