@@ -7,8 +7,8 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
-describe("Given an ActivitiesController's getActivities method", () => {
-  describe("When it receives a response", () => {
+describe("Given the getActivities method of ActivitiesController's ", () => {
+  describe("When it receives a GET request", () => {
     const req = {};
     const res: Pick<Response, "status" | "json"> = {
       status: jest.fn().mockReturnThis(),
@@ -21,7 +21,7 @@ describe("Given an ActivitiesController's getActivities method", () => {
 
     const activitiesController = new ActivitiesController(activitiesRepository);
 
-    test("Then it should call it with 200 status method", async () => {
+    test("Then it should respond with a 200 status code", async () => {
       const expectedStatusCode = 200;
 
       await activitiesController.getActivities(req as Request, res as Response);
@@ -29,7 +29,7 @@ describe("Given an ActivitiesController's getActivities method", () => {
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
     });
 
-    test("Then it should call the json method with all the database activities", async () => {
+    test("Then it should respond with JSON method with the activities from the database ", async () => {
       const expectedActivities = { activities: activitiesMock };
 
       await activitiesController.getActivities(req as Request, res as Response);
