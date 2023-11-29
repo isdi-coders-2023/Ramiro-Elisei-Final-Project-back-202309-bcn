@@ -18,8 +18,8 @@ describe("Given a generalError middleware", () => {
 
   const next = jest.fn();
 
-  describe("When it receives a response and a error with 400", () => {
-    test("Then it should call the status method of the response with a 400", () => {
+  describe("When it receives a response with a 400 error", () => {
+    test("Then it should set the response status to 400", () => {
       const expectedStatusCode = 400;
       const error = new CustomError(errorMessage, expectedStatusCode);
 
@@ -50,8 +50,8 @@ describe("Given a generalError middleware", () => {
       );
     });
 
-    describe("When it receives a response and an error with status code", () => {
-      test("Then it should call the response's status method with 500", () => {
+    describe("When it receives a response with an internal serve error", () => {
+      test("Then it should set the response's status with code 500", () => {
         const expectedStatusCode = 500;
         const error = new Error("Error with status code");
 
