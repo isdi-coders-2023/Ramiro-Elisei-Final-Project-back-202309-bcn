@@ -23,8 +23,8 @@ afterAll(async () => {
 });
 
 describe("Given a GET /activities endpoint", () => {
-  describe("When it receives a request", () => {
-    test("Then it should respond with a status 200 and the 'Generative plant gadering' activity name", async () => {
+  describe("When it receives a GET request", () => {
+    test("Then it should respond with a status 200 and the 'Generative plant gadering' activity name in the response body", async () => {
       const path = "/activities";
       const expectedStatusCode = 200;
 
