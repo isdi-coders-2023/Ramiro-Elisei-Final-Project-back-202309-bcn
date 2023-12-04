@@ -1,7 +1,7 @@
 import morgan from "morgan";
 import express from "express";
 import { app } from "./app.js";
-import cors from "cors";
+import cors, { CorsOptions } from "cors";
 import pingRouter from "../features/ping/router/pingRouter.js";
 import {
   endpointNotFound,
@@ -9,8 +9,12 @@ import {
 } from "./middlewares/errors/errorMiddlewares.js";
 import activityRouter from "../features/activities/router/activityRouter.js";
 
-const corsPort = process.env.AUTHORISED_ORIGIN;
-const corsOptions = { origin: corsPort };
+const allowedOrigins = [
+  process.env.ALLOWED_ORIGIN_DEV!,
+  process.env.ALLOWED_ORIGIN_PROD!,
+];
+
+const corsOptions: cors.CorsOptions = { origin: allowedOrigins };
 
 app.use(cors(corsOptions));
 
