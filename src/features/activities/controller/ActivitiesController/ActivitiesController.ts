@@ -1,4 +1,4 @@
-import { type Request, type Response } from "express";
+import { type NextFunction, type Request, type Response } from "express";
 import { type ActivitiesRepository } from "../../repository/types.js";
 
 class ActivitiesController {
@@ -8,6 +8,20 @@ class ActivitiesController {
     const activities = await this.activitiesRepository.getActivities();
 
     res.status(200).json({ activities });
+  };
+
+  deleteActivity = async (
+    req: Request,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> => {
+    try {
+      const { activityId } = req.params;
+      await this.activitiesRepository.deleteActivity(activityId);
+      res.status(200).json({ message: "The activity has been deleted" });
+    } catch (error) {
+      next(error);
+    }
   };
 }
 
