@@ -1,7 +1,7 @@
 import morgan from "morgan";
 import express from "express";
 import { app } from "./app.js";
-import cors, { CorsOptions } from "cors";
+import cors from "cors";
 import pingRouter from "../features/ping/router/pingRouter.js";
 import {
   endpointNotFound,

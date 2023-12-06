@@ -1,5 +1,6 @@
 import { type ActivityStructure } from "../types";
 
 export interface ActivitiesRepository {
-  getActivities(): Promise<ActivityStructure[]>;
+  getActivities: () => Promise<ActivityStructure[]>;
+  deleteActivity: (id: string) => Promise<void>;
 }

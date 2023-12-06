@@ -7,3 +7,7 @@ export interface ActivityStructure {
   activityDescription: string;
   imageUrl: string;
 }
+
+export interface ActivityStructureId extends ActivityStructure {
+  _id: string;
+}
