@@ -9,4 +9,9 @@ const activitiesController = new ActivitiesController(activitiesRepository);
 
 activityRouter.get("/", activitiesController.getActivities);
 
+activityRouter.delete(
+  "/delete/:activityId",
+  activitiesController.deleteActivity,
+);
+
 export default activityRouter;
