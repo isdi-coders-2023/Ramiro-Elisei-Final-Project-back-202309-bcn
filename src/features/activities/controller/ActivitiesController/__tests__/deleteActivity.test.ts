@@ -1,7 +1,7 @@
-import { type NextFunction, type Request, type Response } from "express";
-import { type ActivitiesRepository } from "../../../repository/types";
-import ActivitiesController from "../ActivitiesController";
 import type CustomError from "../../../../../server/CustomError/CustomError";
+import ActivitiesController from "../ActivitiesController";
+import { type ActivitiesRepository } from "../../../repository/types";
+import { type NextFunction, type Request, type Response } from "express";
 
 beforeEach(() => {
   jest.clearAllMocks();
@@ -53,7 +53,7 @@ describe("Given ActivitiesController: deleteActivity method", () => {
 
         const activitiesRepository: ActivitiesRepository = {
           getActivities: jest.fn(),
-          deleteActivity: jest.fn(),
+          deleteActivity: jest.fn().mockRejectedValue(expectErrorMessage),
         };
 
         const activitiesController = new ActivitiesController(
