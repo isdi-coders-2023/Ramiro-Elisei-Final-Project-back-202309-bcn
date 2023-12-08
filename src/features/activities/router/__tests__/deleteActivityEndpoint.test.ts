@@ -1,7 +1,7 @@
-import { app } from "../../../server/app";
-import "../../../server/index";
+import { app } from "../../../../server/app";
+import "../../../../server/index";
 import request from "supertest";
-import "../../../setupTests";
+import "../../../../setupTests";
 
 describe("Given a DELETE method to the endpoint /activities/delete/:activityId", () => {
   describe("When it receives a request with a valid id", () => {

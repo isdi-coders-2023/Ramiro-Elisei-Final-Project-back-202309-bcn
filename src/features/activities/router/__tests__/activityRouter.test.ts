@@ -1,12 +1,12 @@
 import { MongoMemoryServer } from "mongodb-memory-server";
-import { connectToDatabase } from "../../../database";
+import { connectToDatabase } from "../../../../database";
 import mongoose from "mongoose";
-import { Activity } from "../model/Activity";
-import { activitiesMock } from "../mocks/activitiesMock";
+import { Activity } from "../../model/Activity";
+import { activitiesMock } from "../../mocks/activitiesMock";
 import request from "supertest";
-import { type ActivityStructure } from "../types";
-import { app } from "../../../server/app";
-import "../../../server/index";
+import { type ActivityStructure } from "../../types";
+import { app } from "../../../../server/app";
+import "../../../../server/index";
 
 let server: MongoMemoryServer;
 

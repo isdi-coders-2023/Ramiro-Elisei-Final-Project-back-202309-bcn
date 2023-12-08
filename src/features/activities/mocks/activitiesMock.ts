@@ -10,6 +10,7 @@ export const activitiesMock: ActivityStructure[] = [
     activityDescription:
       "Cultivate sustainable ideas in our playful Generative Plant Gathering workshop: where creativity blossoms with environmental consciousness.",
     imageUrl: "https://i.ibb.co/8zFCCQk/plant-gadering.webp",
+    imageSmallUrl: "https://i.ibb.co/7vH8sj7/plant-gadering-small.webp",
   },
   {
     activityType: "Classes",
@@ -20,5 +21,6 @@ export const activitiesMock: ActivityStructure[] = [
     activityDescription:
       "Unplug, pedal, blend! Join our Unplugged Smoothies Bike workshop for a fusion of fun, flavor, and fitness. Let's ride and blend our way to tasty triumphs!",
     imageUrl: "https://i.ibb.co/gRbgwSs/Smoothie.webp",
+    imageSmallUrl: "https://i.ibb.co/nMMGwGP/Smoothie-small.webp",
   },
 ];

@@ -14,4 +14,6 @@ activityRouter.delete(
   activitiesController.deleteActivity,
 );
 
+activityRouter.post("/add", activitiesController.addActivity);
+
 export default activityRouter;

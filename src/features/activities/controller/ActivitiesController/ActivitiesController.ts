@@ -1,4 +1,5 @@
 import { type NextFunction, type Request, type Response } from "express";
+import { type CustomRequest } from "../../types.js";
 import { type ActivitiesRepository } from "../../repository/types.js";
 
 class ActivitiesController {
@@ -19,6 +20,25 @@ class ActivitiesController {
       const { activityId } = req.params;
       await this.activitiesRepository.deleteActivity(activityId);
       res.status(200).json({ message: "The activity has been deleted" });
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public addActivity = async (
+    req: CustomRequest,
+    res: Response,
+    next: NextFunction,
+  ) => {
+    const newActivity = req.body;
+
+    try {
+      const addedActivity =
+        await this.activitiesRepository.addActivity(newActivity);
+
+      res
+        .status(201)
+        .json({ message: "The activity has been created", addedActivity });
     } catch (error) {
       next(error);
     }

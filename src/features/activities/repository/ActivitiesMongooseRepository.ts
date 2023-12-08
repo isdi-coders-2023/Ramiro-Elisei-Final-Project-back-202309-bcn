@@ -1,6 +1,6 @@
 import CustomError from "../../../server/CustomError/CustomError.js";
 import { Activity } from "../model/Activity.js";
-import { type ActivityStructure } from "../types";
+import { type ActivityData, type ActivityStructure } from "../types";
 import { type ActivitiesRepository } from "./types";
 
 class ActivitiesMongooseRepository implements ActivitiesRepository {
@@ -15,6 +15,16 @@ class ActivitiesMongooseRepository implements ActivitiesRepository {
       await Activity.findByIdAndDelete(activityId);
     } catch (error) {
       throw new CustomError("Error deleting activity", 400);
+    }
+  }
+
+  public async addActivity(activity: ActivityStructure): Promise<ActivityData> {
+    try {
+      const newActivity = await Activity.create(activity);
+
+      return newActivity;
+    } catch (error) {
+      throw new CustomError("Error creating new Activity", 400);
     }
   }
 }
