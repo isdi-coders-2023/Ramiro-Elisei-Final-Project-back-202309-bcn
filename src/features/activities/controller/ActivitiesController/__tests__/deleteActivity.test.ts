@@ -11,6 +11,7 @@ describe("Given ActivitiesController: deleteActivity method", () => {
   const activityRepository: ActivitiesRepository = {
     getActivities: jest.fn(),
     deleteActivity: jest.fn(),
+    addActivity: jest.fn(),
   };
 
   const activityController = new ActivitiesController(activityRepository);
@@ -54,6 +55,7 @@ describe("Given ActivitiesController: deleteActivity method", () => {
         const activitiesRepository: ActivitiesRepository = {
           getActivities: jest.fn(),
           deleteActivity: jest.fn().mockRejectedValue(expectErrorMessage),
+          addActivity: jest.fn(),
         };
 
         const activitiesController = new ActivitiesController(

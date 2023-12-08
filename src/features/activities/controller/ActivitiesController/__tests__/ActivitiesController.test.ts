@@ -18,6 +18,7 @@ describe("Given the getActivities method of ActivitiesController's ", () => {
     const activitiesRepository: ActivitiesMongooseRepository = {
       getActivities: jest.fn().mockResolvedValue(activitiesMock),
       deleteActivity: jest.fn(),
+      addActivity: jest.fn(),
     };
 
     const activitiesController = new ActivitiesController(activitiesRepository);
